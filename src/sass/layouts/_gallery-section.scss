@@ -1,0 +1,25 @@
+@import "../abstracts/_variables";
+
+.gallery-section {
+  width: 100%;
+  // height: 10vh;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  position: relative;
+  padding-top: 10rem;
+  // margin-bottom: 4rem;
+
+  // display: grid;
+  // grid-template-columns: 1fr;
+  // grid-template-rows: min-content, min-content;
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    background-color: red;
+    background-image: linear-gradient($color-product-background, white);
+  }
+}

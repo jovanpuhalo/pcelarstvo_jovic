@@ -1,0 +1,19 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  box-sizing: border-box;
+  // height: 2000px;
+  font-family: "Patrick Hand", cursive;
+  background-color: transparent;
+  // font-family: "Courgette", cursive;
+  //   font-family: 'Lobster', cursive;
+  // font-family: 'Rubik Dirt', cursive;
+}

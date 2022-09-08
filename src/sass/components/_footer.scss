@@ -1,0 +1,52 @@
+@import "../abstracts/_variables";
+
+.footer {
+  width: 100%;
+  height: 20vh;
+  background-image: linear-gradient(to top, rgb(255, 128, 0) 90%, white);
+  padding: 2rem;
+  display: flex;
+  font-family: "Suez One", serif;
+
+  &__logo,
+  &__address,
+  &__copyright {
+    padding: 0 5rem;
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    flex-basis: 40%;
+    justify-content: space-between;
+    box-sizing: border-box;
+    border-right: 2px solid $color-menu;
+  }
+
+  &__address {
+    flex-basis: 20%;
+    justify-content: center;
+    border-right: 2px solid $color-menu;
+    color: $color-menu;
+    font-size: 1.6rem;
+  }
+
+  &__copyright {
+    flex-basis: 40%;
+    justify-content: flex-start;
+    font-size: 1.2rem;
+  }
+
+  &__icon {
+    width: 8rem;
+    height: 8rem;
+    background-color: transparent;
+    color: $color-menu;
+    margin-left: auto;
+  }
+
+  &__second-style {
+    background-image: none;
+    background-color: $color-product-background;
+  }
+}

@@ -1,0 +1,20 @@
+@import "../abstracts/_variables";
+
+.products {
+  width: 100%;
+  //   height: 150vh;
+  // background-color: $color-product-background;
+  background-image: linear-gradient($color-product-background 20%, white, $color-product-background);
+
+  position: relative;
+  padding-bottom: 10rem;
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 90px;
+    position: absolute;
+    top: 0;
+    background-image: linear-gradient(to top, $color-product-background, white);
+  }
+}

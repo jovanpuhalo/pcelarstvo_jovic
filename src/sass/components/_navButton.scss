@@ -1,0 +1,45 @@
+@import "../abstracts/_mixins.scss";
+@import "../abstracts/_variables";
+
+.navi {
+  width: 5.5rem;
+  height: 5.5rem;
+  //   background-color: rgb(159, 133, 93);
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+
+  &_button {
+    position: relative;
+    width: 50%;
+
+    &,
+    &::after,
+    &::before {
+      content: "";
+
+      height: 2px;
+      background-color: $color-menu;
+    }
+    &::after,
+    &::before {
+      content: "";
+      width: 100%;
+      position: absolute;
+      transition: all 0.2s;
+    }
+
+    &::before {
+      top: -1rem;
+    }
+    &::after {
+      top: 1rem;
+    }
+  }
+}

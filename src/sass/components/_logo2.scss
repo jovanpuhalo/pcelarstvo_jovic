@@ -1,0 +1,27 @@
+@import "../abstracts/_variables";
+
+.logo2 {
+  display: flex;
+  margin-top: 1rem;
+  & span {
+    font-size: 4rem;
+    display: block;
+    font-weight: 800;
+    font-family: "Suez One", serif;
+    letter-spacing: 3px;
+    color: $color-menu;
+    text-shadow: 0px 1px 0px white, 1px 2px 1px black;
+    text-align: right;
+  }
+
+  & span:first-child {
+    font-size: 2.5rem;
+  }
+  &__icon {
+    width: 8rem;
+    height: 8rem;
+    background-color: transparent;
+    color: rgb(255, 174, 0);
+    margin-left: auto;
+  }
+}
