@@ -13,16 +13,23 @@
   //   background-image: linear-gradient(to right, transparent, rgba($color: #713a0d, $alpha: 0.4), transparent);
   border-radius: 5rem;
   padding: 2rem;
-  @media only screen and (max-width: 43.5em) {
+  // @media only screen and (max-width: 43.5em) {
+  //   position: absolute;
+  //   bottom: 10rem;
+  //   margin-left: 2rem;
+  //   max-width: 300px;
+  // }
+
+  @media only screen and (max-width: 31.25em) {
     position: absolute;
-    bottom: 10rem;
+    bottom: 35rem;
     margin-left: 2rem;
     max-width: 300px;
   }
 }
 .header_title,
 .header_slogan {
-  font-size: 10rem;
+  // font-size: 5rem;
   color: $color-primary;
   font-weight: 800;
   width: fit-content;
@@ -33,22 +40,27 @@
   transition: all 0.3s;
 
   @media only screen and (max-width: 75em) {
-    font-size: 5rem;
+    // font-size: 2rem;
   }
-  @media only screen and (max-width: 43.5em) {
-    font-size: 3.8rem;
-    color: rgba(95, 55, 3, 0.888);
-  }
+  // @media only screen and (max-width: 43.5em) {
+  //   font-size: 3.8rem;
+  //   color: rgba(95, 55, 3, 0.888);
+  // }
 
   &__name {
+    margin-top: 1rem;
+
     position: relative;
     font-size: 8.3rem;
     padding: 0;
     animation: moveFirst 1s ease-in;
-    @media only screen and (max-width: 43.5em) {
-      font-size: 4.3rem;
-      margin-bottom: 1rem;
+    @media only screen and (max-width: 75em) {
+      font-size: 6rem;
     }
+    // @media only screen and (max-width: 43.5em) {
+    //   font-size: 4.3rem;
+    //   margin-bottom: 1rem;
+    // }
 
     &--background {
       position: absolute;
@@ -61,12 +73,12 @@
       transform: skew(-30deg);
       z-index: -1;
 
-      @media only screen and (max-width: 43.5em) {
-        font-size: 4.3rem;
-        margin-bottom: 1rem;
-        left: -15rem;
-        background-image: linear-gradient(to right, transparent, rgba(148, 127, 13, 0.8));
-      }
+      // @media only screen and (max-width: 43.5em) {
+      //   font-size: 4.3rem;
+      //   margin-bottom: 1rem;
+      //   left: -15rem;
+      //   background-image: linear-gradient(to right, transparent, rgba(148, 127, 13, 0.8));
+      // }
     }
   }
   &__bisnis {
@@ -76,10 +88,13 @@
     animation: moveSecond 1.5s ease-in;
     padding: 1rem 1rem;
     // width: fit-content;
-    @media only screen and (max-width: 43.5em) {
-      font-size: 3.3rem;
-      margin-left: 0;
+    @media only screen and (max-width: 75em) {
+      font-size: 3rem;
     }
+    // @media only screen and (max-width: 43.5em) {
+    //   font-size: 3.3rem;
+    //   margin-left: 0;
+    // }
     &--background {
       position: absolute;
       top: 0;
@@ -91,9 +106,9 @@
       transform: skew(-30deg);
       //   animation: moveSecond 0s ease-in;
       z-index: -1;
-      @media only screen and (max-width: 43.5em) {
-        background-image: linear-gradient(to right, rgba(148, 127, 13, 0.8), transparent);
-      }
+      // @media only screen and (max-width: 43.5em) {
+      //   background-image: linear-gradient(to right, rgba(148, 127, 13, 0.8), transparent);
+      // }
     }
   }
 }
@@ -103,10 +118,13 @@
   letter-spacing: 12px;
   margin-top: 3rem;
   animation: sloganOpacity 3s ease-out;
-  @media only screen and (max-width: 43.5em) {
-    font-size: 2rem;
+  @media only screen and (max-width: 31.25em) {
     display: none;
   }
+  // @media only screen and (max-width: 43.5em) {
+  //   font-size: 2rem;
+  //   display: none;
+  // }
 }
 
 //   font-family: "Lobster", cursive;

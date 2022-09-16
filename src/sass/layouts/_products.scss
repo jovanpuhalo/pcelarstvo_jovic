@@ -2,11 +2,12 @@
 
 .products {
   width: 100%;
-  //   height: 150vh;
+  // height: 160vh;
   // background-color: $color-product-background;
   background-image: linear-gradient($color-product-background 20%, white, $color-product-background);
 
   position: relative;
+  padding-top: 10rem;
   padding-bottom: 10rem;
 
   &::after {

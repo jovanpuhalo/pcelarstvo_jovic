@@ -9,37 +9,42 @@ const productsData = [
   {
     name: "Podnjaca",
     price: "0.11 KM",
-    url: "img/assets/2.jpeg",
+    url: "img/assets/podnjaca2.jpg",
   },
   {
     name: "Okvir",
     price: "0.11 KM",
-    url: "img/assets/4.jpg",
+    url: "img/assets/okvir2.jpg",
   },
   {
-    name: "Ram",
+    name: "Poklopac",
     price: "0.11 KM",
-    url: "img/assets/7.jpg",
+    url: "img/assets/poklopac3.jpg",
   },
   {
     name: "Nastavak",
     price: "0.11 KM",
-    url: "img/assets/4.jpg",
+    url: "img/assets/nastavak2.jpg",
   },
   {
-    name: "Podnjaca",
+    name: "Hranilica",
     price: "0.11 KM",
-    url: "img/assets/7.jpg",
+    url: "img/assets/hranilica2.jpg",
   },
   {
-    name: "Nastavk",
+    name: "Batin prsten",
     price: "0.11 KM",
-    url: "img/assets/5.jpg",
+    url: "img/assets/zbeg2.jpg",
   },
   {
-    name: "Ram",
+    name: "Snelgrova daska",
     price: "0.11 KM",
-    url: "img/assets/4.jpg",
+    url: "img/assets/snelgrova-daska2.jpg",
+  },
+  {
+    name: "Matična rešetka sa ramom",
+    price: "0.11 KM",
+    url: "img/assets/maticna-resetka-sa-ramom2.jpg",
   },
 ];
 
@@ -47,7 +52,7 @@ const Products = () => {
   // console.log("Componenta product");
   const options = {
     root: null,
-    threshold: 1,
+    threshold: 0.3,
     rootMargin: "-50px",
     triggerOnce: true,
   };

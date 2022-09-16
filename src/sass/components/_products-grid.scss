@@ -4,19 +4,33 @@
 
 .products__grid {
   //   @include absCenter;
-  width: 70%;
+  // width: 70%;
+  max-width: 110rem;
+  height: fit-content;
   //   height: 10vh;
-  padding: 5% 5% 10% 5%;
+  // padding: 5% 5% 10% 5%;
+  // padding: 0 10rem;
   //   background-color: rgb(255, 255, 255);
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, max-content);
-  gap: 5% 7%;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, min-content);
+  gap: 4rem 4rem;
   margin: 0 auto;
   transition: all 0.2s ease-in;
+
   @media only screen and (max-width: 75em) {
-    width: 100%;
-    padding: 2% 2% 5% 2%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    max-width: 80rem;
+  }
+  @media only screen and (max-width: 43.75em) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    max-width: 57rem;
+  }
+  @media only screen and (max-width: 31.25em) {
+    max-width: 90%;
+    gap: 4rem 2rem;
   }
   &__title-and-decoration {
     grid-column: 1/-1;
@@ -31,6 +45,10 @@
 
     @media only screen and (max-width: 75em) {
       font-size: 5rem;
+    }
+    @media only screen and (max-width: 43.75em) {
+      font-size: 4rem;
+      // margin-top: 13rem;
     }
     & div {
       margin-top: 2rem;
@@ -77,12 +95,17 @@
   &__product {
     border-radius: 20px;
     overflow: hidden;
-    height: 35rem;
+    height: 40rem;
     position: relative;
     box-shadow: 0 0 5px black, 0 0 10px black;
     display: flex;
     flex-direction: column;
     transition: all 0.4s ease;
+
+    @media only screen and (max-width: 31.25em) {
+      height: 30rem;
+    }
+
     &:hover {
       cursor: pointer;
       //   transform: scale(1.05);
@@ -113,8 +136,13 @@
 
     &__img {
       position: relative;
-      height: 75%;
+      height: 65%;
       background-color: black;
+
+      @media only screen and (max-width: 31.25em) {
+        height: 55%;
+      }
+
       &__description {
         position: absolute;
         top: 0;
@@ -130,63 +158,69 @@
         height: 100%;
         object-fit: cover;
       }
-      & div {
-        font-size: 3rem;
-        text-align: center;
+    }
+    &__name {
+      font-size: 2rem;
+      font-family: "Suez One", serif;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      width: 100%;
+      height: 1rem;
+      padding: 0.5rem 2.5rem;
+      line-height: 0.8;
+      flex-grow: 1;
+      background-color: rgb(255, 255, 255, 0.6);
+      &::before {
+        content: "";
         position: absolute;
-        bottom: 0;
+        top: 0px;
+        left: 10%;
         width: 100%;
-        padding: 0.5rem 0;
-        background-color: rgb(255, 255, 255, 0.6);
-        &::before {
-          content: "";
-          position: absolute;
-          top: 0px;
-          left: 10%;
-          width: 100%;
-          height: 5px;
-          background-color: $color-hover-product;
-          transform: translateX(100%);
-          transition: all 0.5s ease;
-        }
+        height: 5px;
+        background-color: $color-hover-product;
+        transform: translateX(100%);
+        transition: all 0.5s ease;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0px;
+        right: 10%;
+        width: 100%;
+        height: 5px;
+        background-color: $color-hover-product;
+        transform: translateX(-100%);
+        transition: all 0.5s ease;
+      }
+      & p {
         &::after {
           content: "";
           position: absolute;
-          bottom: 0px;
+          top: 20%;
           right: 10%;
-          width: 100%;
-          height: 5px;
+          width: 5px;
+          height: 300%;
           background-color: $color-hover-product;
-          transform: translateX(-100%);
+          transform: translateY(160%);
+          z-index: 150;
+
           transition: all 0.5s ease;
         }
-        & p {
-          &::after {
-            content: "";
-            position: absolute;
-            top: 20%;
-            right: 10%;
-            width: 5px;
-            height: 300%;
-            background-color: $color-hover-product;
-            transform: translateY(160%);
-            z-index: 150;
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: 20%;
+          left: 10%;
+          width: 5px;
+          height: 650%;
+          background-color: $color-hover-product;
+          transform: translateY(-180%);
+          z-index: 150;
 
-            transition: all 0.5s ease;
-          }
-          &::before {
-            content: "";
-            position: absolute;
-            bottom: 20%;
-            left: 10%;
-            width: 5px;
-            height: 600%;
-            background-color: $color-hover-product;
-            transform: translateY(-180%);
-            z-index: 150;
-
-            transition: all 0.5s ease;
-          }
+          transition: all 0.5s ease;
         }
       }
     }

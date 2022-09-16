@@ -1,0 +1,88 @@
+@import "../abstracts/mixins.scss";
+
+.navigation-mobile {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 70%;
+  background-color: rgb(255, 255, 255);
+  z-index: 500;
+  translate: 101%;
+  transition: all 0.5s ease-in;
+  display: none;
+
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+
+  &__logo {
+    margin-top: 1rem;
+    margin-left: 2rem;
+    width: fit-content;
+  }
+
+  &__close-button {
+    width: 5.5rem;
+    height: 5.5rem;
+    //   background-color: rgb(159, 133, 93);
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 70%;
+      height: 2px;
+      background-color: rgba(0, 0, 0, 0.7);
+      transform: rotate(45deg);
+      //   transform-origin: center;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 70%;
+      height: 2px;
+      background-color: rgba(0, 0, 0, 0.7);
+      transform: rotate(-45deg);
+      //   transform-origin: center;
+    }
+  }
+}
+.translateIn {
+  // transform: translateX(70%);
+  display: block;
+  animation: translateNav 0.3s ease-out forwards;
+}
+.translateOut {
+  // transform: translateX(70%);
+  display: block;
+  animation: translateNavOut 0.3s ease-in forwards;
+}
+@keyframes translateNav {
+  0% {
+    translate: 90%;
+  }
+  100% {
+    translate: 0;
+  }
+}
+
+@keyframes translateNavOut {
+  0% {
+    translate: 0%;
+  }
+  100% {
+    translate: 100%;
+    display: none;
+  }
+}

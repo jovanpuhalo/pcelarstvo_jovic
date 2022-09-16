@@ -2,9 +2,10 @@
 
 .container_about {
   width: 100%;
-  height: 110vh;
+  height: 100vh;
   position: relative;
-  top: -10rem;
+  padding-top: 10rem;
+  // top: -10rem;s
   // background-color: rgb(227, 239, 239);
   font-size: 2rem;
   // background-image: url("../../assets/about1.jpg");
@@ -14,7 +15,7 @@
 }
 .about__background {
   width: 100%;
-  height: 140%;
+  height: 150%;
   position: relative;
   top: 0;
   z-index: -2;
@@ -29,9 +30,9 @@
     position: absolute;
     bottom: 0rem;
     width: 100%;
-    height: 20rem;
+    height: 40rem;
 
-    background-image: linear-gradient(transparent, rgb(255, 255, 255));
+    background-image: linear-gradient(transparent, rgb(255, 255, 255) 70%);
     // background-blend-mode: luminosity;
   }
 }

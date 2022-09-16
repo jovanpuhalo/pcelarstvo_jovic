@@ -7,14 +7,16 @@ import Footer from "../components/Footer/Footer";
 
 const Home = () => {
   return (
-    <div>
-      {/* <Navigation /> */}
-      <Header />
-      <About />
-      <Products />
-      <Gallery />
-      <Footer />
-    </div>
+    <>
+      <div>
+        {/* <Navigation /> */}
+        <Header />
+        <About />
+        <Products />
+        <Gallery />
+        <Footer />
+      </div>
+    </>
   );
 };
 

@@ -19,11 +19,11 @@ const Product = ({ item }) => {
         <div className="products__grid__product__img">
           <img src={item.url} alt=" Slika" />
           <p className="products__grid__product__img__description">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia
           </p>
-          <div>
-            <p>{item.name}</p>
-          </div>
+        </div>
+        <div className="products__grid__product__name">
+          <p>{item.name}</p>
         </div>
         <div className="products__grid__product__price">Cijena: {item.price}</div>
       </div>

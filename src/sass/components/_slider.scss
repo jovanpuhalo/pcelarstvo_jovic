@@ -1,0 +1,69 @@
+@import "../../sass/abstracts/mixins";
+
+.slider {
+  //   @include absCenter;4
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //   position: absolute;
+  @include absCenter;
+  width: 95%;
+  min-height: 70rem;
+
+  & img {
+    max-height: 70rem;
+  }
+}
+
+.arrow-back,
+.arrow-forward {
+  position: absolute;
+  top: 50%;
+  color: white;
+  padding: 1rem;
+  background-color: rgba(129, 129, 129, 0.573);
+  font-size: 5rem;
+  //   isolation: isolate;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s;
+  z-index: 2000;
+  &:hover {
+    background-color: rgba(254, 254, 254, 0.99);
+    color: rgb(90, 89, 89);
+  }
+}
+
+.arrow-back {
+  left: 20px;
+
+  //   &::after {
+  //     content: "";
+  //     position: absolute;
+  //     top: 0;
+  //     left: 50px; // @include absCenter;
+  //     width: 50px;
+  //     height: 50px;
+  //     background-color: rgba(255, 255, 255, 0.4);
+  //     color: green;
+  //     // border-radius: 50%;
+  //     // cursor: pointer;
+
+  //     z-index: 1000;
+  //   }
+}
+
+.arrow-forward {
+  right: 20px;
+  //   &::after {
+  //     content: " ";
+  //     // @include absCenter;
+
+  //     width: 50px;
+  //     height: 50px;
+  //     background-color: rgba(255, 255, 255, 0.4);
+  //     border-radius: 50%;
+  //     // cursor: pointer;
+  //     // z-index: -1;
+  //   }
+}

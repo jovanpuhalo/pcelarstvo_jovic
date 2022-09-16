@@ -7,14 +7,16 @@
 
   &__contact--form {
     width: 70%;
-    height: 60vh;
-    margin: 0 auto;
-    margin-top: 7rem;
-    //   border: 1px solid black;
+    // height: 60vh;
+    margin: 2rem auto;
     display: flex;
+    @media only screen and (max-width: 43.75em) {
+      flex-direction: column;
+    }
 
     &__address {
       flex-grow: 1;
+      padding-bottom: 2rem;
       & span {
         display: block;
       }
@@ -24,7 +26,7 @@
         font-family: "Suez One", serif;
         letter-spacing: 2px;
         color: $color-menu;
-        margin-bottom: 4rem;
+        margin-bottom: 2rem;
       }
       & :last-child {
         font-size: 1.8rem;
@@ -37,11 +39,15 @@
       flex-grow: 3;
       display: flex;
       flex-direction: column;
+      @media only screen and (max-width: 43.75em) {
+        // margin-top: 3rem;
+        // padding-bottom: 3rem;
+      }
 
       & input {
         width: 100%;
         height: 4rem;
-        margin-bottom: 2rem;
+        margin-bottom: 1.7rem;
         border-radius: 6px;
         padding-left: 2rem;
         font-size: 1.7rem;
@@ -88,7 +94,7 @@
       & button {
         width: 9rem;
         height: 3rem;
-        margin-top: 4rem;
+        margin-top: 3rem;
         border: none;
         border-radius: 6px;
         color: white;
@@ -111,14 +117,10 @@
   }
 
   &__location {
-    width: 70%;
+    width: 90%;
     margin: 0 auto;
     margin-bottom: 5rem;
-    height: 400px;
     animation: opacity 2000ms ease-out forwards;
-    & > * {
-      margin-left: auto;
-    }
   }
 }
 

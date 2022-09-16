@@ -4,7 +4,7 @@
   left: 0;
   width: 100%;
   height: 100vh;
-  z-index: 20;
+  z-index: 400;
   background-color: rgba(0, 0, 0, 0.75);
 }
 
@@ -13,26 +13,37 @@
   top: 50%;
   left: 50%;
   translate: -50% -300px;
-  margin: 0 auto;
-  width: 30%;
-  background-color: white;
+  // margin: 0 auto;
+  // width: 56%; //
+  // min-height: 70rem;//
+  background-color: rgba(255, 255, 255, 1);
   font-size: 2.5rem;
   font-family: "Bree Serif", serif;
-
+  // padding: 20rem; //
   padding: 1rem 3rem;
   border-radius: 14px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-  z-index: 30;
+  z-index: 400;
   transition: all 1s ease;
   animation: slide-down 300ms ease-out forwards;
-}
+  overflow: hidden;
 
-//   @media (min-width: 768px) {
-//     .modal {
-//       width: 40rem;
-//       left: calc(50% - 20rem);
-//     }
-//   }
+  & img {
+    // max-height: 70rem;
+  }
+}
+.gallery-modal {
+  padding: 0;
+  box-shadow: none; //
+  background-color: transparent; //
+  min-height: 70rem; //
+  width: 56%; //
+  @media only screen and (max-width: 43.5em) {
+    width: 90%;
+    min-height: 90%;
+    translate: -50% -300px;
+  }
+}
 
 @keyframes slide-down {
   from {

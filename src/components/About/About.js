@@ -11,7 +11,7 @@ const About = () => {
   // console.log("Komponenta about");
   const options = {
     root: null,
-    threshold: 1,
+    threshold: 0.3,
     rootMargin: -80 + "px",
     triggerOnce: true,
   };
@@ -21,7 +21,7 @@ const About = () => {
   const dispatch = useDispatch();
 
   const { ref: titleRef, inView: inViewTitle } = useInView(options);
-  const { ref: textRef, inView: inViewText } = useInView({ ...options, threshold: 0.5 });
+  const { ref: textRef, inView: inViewText } = useInView(options);
   const { ref: buttonRef, inView: inViewButton } = useInView(options);
 
   const handleResize = useCallback(

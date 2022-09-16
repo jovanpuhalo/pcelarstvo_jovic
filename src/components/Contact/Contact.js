@@ -47,7 +47,7 @@ const Contact = () => {
       }, 2000);
     }, 1000);
 
-    // emailjs.sendForm("service_ljud1p2", "template_j27pmin", e.target, "qDRfk219mxVwFB66i");
+    // emailjs.sendForm("services_ljud1p2", "template_j27pmin", e.target, "qDRfk219mxVwFB66i");
   };
 
   const formIsValid = name.trim() !== "" && surname.trim() !== "" && email.trim() !== "";

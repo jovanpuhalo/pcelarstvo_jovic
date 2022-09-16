@@ -6,7 +6,7 @@ import ContactPage from "./pages/ContactPage.js";
 
 function App() {
   const { pathname, hash, key } = useLocation();
-  console.log("App components", pathname, hash);
+  console.log("App components");
 
   useEffect(() => {
     // if not a hash link, scroll to top

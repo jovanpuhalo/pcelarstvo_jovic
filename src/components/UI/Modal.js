@@ -2,12 +2,12 @@ import React, { Fragment } from "react";
 import ReactDOM from "react-dom";
 import "../../sass/components/_ui.scss";
 
-const Backdrop = (props) => {
+export const Backdrop = (props) => {
   return <div className="backdrop" onClick={props.onClose}></div>;
 };
 
 const ModalOverlay = (props) => {
-  return <div className="modal">{props.children}</div>;
+  return <div className={`modal ${props.class}`}>{props.children}</div>;
 };
 
 const Modal = (props) => {
@@ -15,7 +15,7 @@ const Modal = (props) => {
   return (
     <Fragment>
       {ReactDOM.createPortal(<Backdrop onClose={props.onClose} />, portalElement)}
-      {ReactDOM.createPortal(<ModalOverlay>{props.children}</ModalOverlay>, portalElement)}
+      {ReactDOM.createPortal(<ModalOverlay class={props.class}> {props.children}</ModalOverlay>, portalElement)}
     </Fragment>
   );
 };
