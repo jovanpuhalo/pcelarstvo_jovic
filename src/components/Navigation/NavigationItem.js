@@ -44,7 +44,7 @@ const NavigationItem = (props) => {
           {name}
         </Link>
       )} */}
-      <span className="navigation-item__icon">{icon}</span>
+      <span className="navigation-item__icon hide-icon_for-desktop">{icon}</span>
       {name}
     </li>
   );
