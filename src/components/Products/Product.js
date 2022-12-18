@@ -2,8 +2,6 @@ import React from "react";
 import { useInView } from "react-intersection-observer";
 
 const Product = ({ item }) => {
-  // console.log("Componenta product");
-
   const options = {
     root: null,
     threshold: 0.3,
@@ -12,7 +10,6 @@ const Product = ({ item }) => {
   };
   const { ref: productRef, inView: inViewProduct } = useInView(options);
 
-  // console.log(inViewProduct);
   return (
     <div className={`products__grid--container ${inViewProduct && "stickyy"}`} ref={productRef}>
       <div className={`products__grid__product`}>

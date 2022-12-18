@@ -9,7 +9,6 @@ import { MdArrowForwardIos } from "react-icons/md";
 import useEventListener from "../hooks/useEventListener";
 
 const GallerySlider = ({ items, itemData, onClose }) => {
-  console.log("Galleri slider komponenta");
   const [imgData, setImgData] = useState({});
   const [animateLeft, setAnimateLeft] = useState(false);
   const [animateRight, setAnimateRight] = useState(false);
@@ -56,7 +55,7 @@ const GallerySlider = ({ items, itemData, onClose }) => {
 
   let timer;
   const onKeyDownHandler = (e) => {
-    // sesavali su se problemi u radu slidera pa iz tog razloga je ovde primenjen metod deboucing-a
+    // desavali su se problemi u radu slidera pa iz tog razloga je ovde primenjen metod deboucing-a
 
     clearTimeout(timer);
     timer = setTimeout(() => {

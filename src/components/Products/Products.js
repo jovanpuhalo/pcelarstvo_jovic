@@ -49,7 +49,6 @@ const productsData = [
 ];
 
 const Products = () => {
-  // console.log("Componenta product");
   const options = {
     root: null,
     threshold: 0.3,

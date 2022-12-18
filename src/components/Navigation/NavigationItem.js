@@ -1,16 +1,23 @@
-import { NavLink, useNavigate } from "react-router-dom";
-
-import { Link } from "react-scroll";
+import { useNavigate } from "react-router-dom";
 
 import { useDispatch, useSelector } from "react-redux";
 import { uiActions } from "../../store/ui-slice";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const NavigationItem = (props) => {
-  // console.log("Render navigavija");
-
   const { name, link, icon } = props.children;
-
+  const variantsChildren = {
+    hidden: {
+      x: props.showNavMobile ? 150 : -150,
+      rotate: props.showNavMobile ? -10 : 0,
+      opacity: 0,
+    },
+    shown: {
+      x: 0,
+      opacity: 1,
+    },
+  };
   const [mouseLinkOver, setMouseLinkOver] = useState(false);
   const mouseNavOver = useSelector((state) => state.ui.mouseNavOver);
   const dispatch = useDispatch();
@@ -31,22 +38,17 @@ const NavigationItem = (props) => {
   };
 
   return (
-    <li
+    <motion.li
       className={props.className ? null : `navigation-item ${mouseNavOver && !mouseLinkOver ? "opacity" : " "}`} // className za mobilni
       onMouseOver={mouseOverHandler}
       onMouseLeave={mouseLeaveHandler}
       onClick={onClickHandler}
+      variants={variantsChildren}
+      transition={{ duration: props.showNavMobile ? 1 : 0.2 }}
     >
-      {/* {link !== "about" && link !== "products" ? (
-        <NavLink to={link}>{name}</NavLink>
-      ) : (
-        <Link to={link} spy={true} smooth={true} offset={-10} duration={500}>
-          {name}
-        </Link>
-      )} */}
       <span className="navigation-item__icon hide-icon_for-desktop">{icon}</span>
       {name}
-    </li>
+    </motion.li>
   );
 };
 export default NavigationItem;

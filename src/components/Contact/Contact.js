@@ -46,8 +46,7 @@ const Contact = () => {
         setShowModal(false);
       }, 2000);
     }, 1000);
-
-    // emailjs.sendForm("services_ljud1p2", "template_j27pmin", e.target, "qDRfk219mxVwFB66i");
+    emailjs.sendForm("service_ljud1p2", "template_j27pmin", e.target, "qDRfk219mxVwFB66i");
   };
 
   const formIsValid = name.trim() !== "" && surname.trim() !== "" && email.trim() !== "";
@@ -60,6 +59,7 @@ const Contact = () => {
           <span>
             Hase bb, <br /> 76300 Bijeljina, BiH.
             <br />
+            <h1>{process.env.REACT_APP_TITLE}</h1>
             <br /> Tel: +387 65 123 456,
             <br />
             E-mail: jovic@gmail.com
@@ -76,7 +76,6 @@ const Contact = () => {
           <button disabled={!formIsValid}>{`${sending ? "Slanje..." : "Pošalji"}`}</button>
         </form>
       </div>
-
       <Location />
 
       <Footer secondStyle />

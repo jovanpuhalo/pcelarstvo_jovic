@@ -8,7 +8,6 @@ import { Link } from "react-router-dom";
 import { useInView } from "react-intersection-observer";
 
 const About = () => {
-  // console.log("Komponenta about");
   const options = {
     root: null,
     threshold: 0.3,
@@ -16,8 +15,6 @@ const About = () => {
     triggerOnce: true,
   };
   const [scrollY, setScrollY] = useState(0);
-  // const [position, setPosition] = useState();
-  // const referenca = useRef();
   const dispatch = useDispatch();
 
   const { ref: titleRef, inView: inViewTitle } = useInView(options);
@@ -26,7 +23,6 @@ const About = () => {
 
   const handleResize = useCallback(
     function (e) {
-      // console.log(e.scrollLeft);
       const value = window.scrollY;
       setScrollY(value);
       dispatch(uiActions.setScrollY(value));
@@ -34,8 +30,6 @@ const About = () => {
     [dispatch]
   );
   useEffect(() => {
-    // setPosition(referenca.current.getBoundingClientRect());
-    // referenca.current.getBoundingClientRect();
     window.addEventListener("scroll", handleResize);
   }, [handleResize]);
   return (

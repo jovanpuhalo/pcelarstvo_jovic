@@ -3,7 +3,16 @@
 .contact {
   display: flex;
   flex-direction: column;
-  background-image: linear-gradient($color-product-background 20%, white, $color-product-background);
+  background-image: linear-gradient($color-product-background 20%, rgb(239, 236, 217), $color-product-background);
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 1rem;
+    background-image: linear-gradient(to top, transparent, rgb(239, 236, 217));
+  }
 
   &__contact--form {
     width: 70%;

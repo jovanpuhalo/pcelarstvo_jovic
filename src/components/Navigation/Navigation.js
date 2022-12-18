@@ -6,6 +6,7 @@ import { useState, useEffect, useCallback, memo } from "react";
 import Logo2 from "../Logo/Logo2";
 import NavigationMobile from "./Navigation mobile/NavigationMobile";
 import { Backdrop } from "../UI/Modal";
+import { motion } from "framer-motion";
 // import { useSelector } from "react-redux";
 
 const Navigation = ({ stickyClass, inView, secondLogo }) => {
@@ -13,7 +14,7 @@ const Navigation = ({ stickyClass, inView, secondLogo }) => {
     height: window.innerHeight,
     width: window.innerWidth,
   });
-  const [showNavMobile, setShowNavMobile] = useState(null);
+  const [showNavMobile, setShowNavMobile] = useState(false);
 
   // const scrollY = useSelector((state) => state.ui.scrollY);
   // const scrollYPrev = useSelector((state) => state.ui.scrollYPrev);
@@ -23,12 +24,17 @@ const Navigation = ({ stickyClass, inView, secondLogo }) => {
       height: window.innerHeight,
       width: window.innerWidth,
     });
-    setShowNavMobile(null); //u slucaju resizea da se ne bi doslo do translacije menija
+    setShowNavMobile(null); //u slucaju resizea da ne bi doslo do translacije menija
   }, []);
 
   const onClickHandler = () => {
-    setShowNavMobile(true);
-    document.body.style.overflow = "hidden";
+    if (showNavMobile) {
+      document.body.style.overflow = "auto";
+    } else {
+      document.body.style.overflow = "hidden";
+    }
+    setShowNavMobile((prev) => !prev);
+    // document.body.style.overflow = "hidden";
   };
   const onCloseHandler = () => {
     setShowNavMobile(false);
@@ -39,18 +45,22 @@ const Navigation = ({ stickyClass, inView, secondLogo }) => {
   }, [handleResize]);
   // ? `navigation navigation--sticky ${!inView && scrollYPrev > scrollY && "sticky"}`
 
-  let navClass = stickyClass === "sticky" ? `navigation navigation--sticky ${!inView && "sticky"}` : "navigation";
+  let navClass =
+    stickyClass === "sticky"
+      ? `navigation navigation--sticky ${!inView && "sticky"} `
+      : `navigation ${showNavMobile && "color"}`;
   return (
     <>
       {showNavMobile && <Backdrop onClose={onCloseHandler} />}
       <nav className={navClass}>
-        {dimensions.width < 500 && <NavButon onClick={onClickHandler} />}
-        {secondLogo ? <Logo2 /> : !showNavMobile ? <Logo logoStycky={stickyClass} /> : ""}
-        {dimensions.width > 499 && <NavigationItems />}
+        {dimensions.width <= 500 && <NavButon showNavMobile={showNavMobile} onClick={onClickHandler} />}
+        {secondLogo ? <Logo2 /> : stickyClass ? <Logo logoStycky={stickyClass} /> : ""}
+        {dimensions.width > 500 && <NavigationItems />}
       </nav>
-      {dimensions.width < 500 && (
+      {dimensions.width <= 500 && (
         <NavigationMobile
-          className={showNavMobile ? "translateIn" : showNavMobile === false ? "translateOut" : ""}
+          showNavMobile={showNavMobile}
+          // className={showNavMobile ? "translateIn" : showNavMobile === false ? "translateOut" : ""}
           onClick={onCloseHandler}
         />
       )}

@@ -1,9 +1,12 @@
 import React from "react";
 import "../../../sass/components/_navButton.scss";
-const NavButon = ({ onClick }) => {
+const NavButon = ({ onClick, showNavMobile }) => {
+  console.log("render button", showNavMobile);
   return (
-    <div className="navi_mobile_button" onClick={onClick}>
-      <div className="navi_mobile_button_button"></div>
+    <div className={`${showNavMobile ? "menu-mobile-button__close" : "menu-mobile-button__open"} `} onClick={onClick}>
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
   );
 };

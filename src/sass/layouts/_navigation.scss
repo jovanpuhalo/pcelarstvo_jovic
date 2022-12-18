@@ -2,26 +2,25 @@
 
 .navigation {
   width: 100%;
-  height: 10rem;
-  // background-color: rgb(255, 255, 255);
-  // border: 1px solid rgb(211, 194, 194);
+  height: 12rem;
   display: flex;
   justify-content: space-between;
-  padding-left: 5rem;
-  // transition: all 3s;
-  // position: relative;
-  // overflow: hidden;
+
+  position: relative;
+  overflow: hidden;
+  z-index: 500;
 
   @media only screen and (max-width: 31.25em) {
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(239, 236, 217);
   }
 
   &--sticky {
     transition: all 0.2s ease;
     position: fixed;
-    top: 0;
+    top: -2rem;
 
     // bottom: 0;
+    box-shadow: 0px 0px 10px 0px black;
     transform: translateY(-100%);
     // background-color: red;
   }
@@ -43,9 +42,12 @@
     }
     &--sticky {
       & img {
-        width: 8rem;
-        height: 8rem;
+        width: 10rem;
+        height: 10rem;
         transition: all 0.3s;
+        position: absolute;
+        top: 1rem;
+        left: 2rem;
         @media only screen and (max-width: 75em) {
           width: 10rem;
           height: 10rem;
@@ -59,12 +61,20 @@
   }
   &-items {
     align-items: center;
+    position: absolute;
+    top: 4rem;
+    right: 19rem;
     display: flex;
     flex-shrink: 0;
     list-style: none;
-    padding-right: 20%;
+
+    // padding-right: 20%;
     @media only screen and (max-width: 75em) {
       padding-right: 5%;
+      right: 15rem;
+    }
+    @media only screen and (max-width: 43.5em) {
+      right: 1rem;
     }
   }
   &-item {
@@ -80,7 +90,7 @@
     transition: all 0.3s;
     &__icon {
       margin-right: 2rem;
-      color: $color-primary-hover;
+      color: rgba(0, 0, 0, 0.827);
       font-size: 3rem;
       display: none;
       @media only screen and (max-width: 31.25em) {
@@ -112,42 +122,20 @@
   }
 }
 .sticky {
-  background-color: rgba(255, 255, 255, 1);
-  transform: translateY(0);
+  background-color: rgb(239, 236, 217);
+  transform: translateY(2rem);
 
-  z-index: 300;
+  z-index: 500;
   @media only screen and (max-width: 56em) {
     // transform: translateY(250%);
   }
 }
+// .color {
+//   background-color: rgb(255, 172, 172);
+// }
 .opacity {
   opacity: 0.5;
   // transform: scale(0.9);
-}
-.navigation-mobile__items {
-  list-style: none;
-  font-size: 2em;
-  text-transform: uppercase;
-  // text-align: center;
-  margin-top: 6rem;
-  display: flex;
-  flex-direction: column;
-  // justify-content: flex-end;
-  // align-items: center;
-  margin-left: 3rem;
-  font-family: "Suez One", serif;
-
-  & li {
-    margin-bottom: 3.5rem;
-    width: 70%;
-    cursor: pointer;
-  }
-  & a,
-  a:visited {
-    // border-bottom: 2px solid black;
-    color: black;
-    text-decoration: none;
-  }
 }
 
 // .hide-desktop {

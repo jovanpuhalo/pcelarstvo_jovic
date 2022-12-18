@@ -1,48 +1,168 @@
 @import "../abstracts/_mixins.scss";
 @import "../abstracts/_variables";
 
-.navi_mobile_button {
-  width: 5.5rem;
-  height: 5.5rem;
-  //   background-color: rgb(159, 133, 93);
-  border-radius: 50%;
+.menu-mobile-button__close,
+.menu-mobile-button__open {
+  width: 4.5rem;
+  height: 5rem;
   position: absolute;
-  top: 10px;
-  right: 10px;
+  right: 3rem;
+  top: 3rem;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  cursor: pointer;
+  z-index: 100;
 
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
-  &:hover {
-    cursor: pointer;
+  & > div {
+    width: 100%;
+    height: 5px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 2px;
+  }
+}
+
+.menu-mobile-button__close {
+  cursor: pointer;
+  animation: rotateButtonClose 0.3s ease forwards;
+  & :nth-child(1) {
+    animation: topAnimationClose 0.3s ease forwards;
   }
 
-  &_button {
-    position: relative;
-    width: 50%;
+  & :nth-child(2) {
+    animation: opacityMiddleHide 0.3s ease forwards;
+  }
+  & :nth-child(3) {
+    animation: bottomAnimationClose 0.3s ease forwards;
+  }
+}
 
-    &,
-    &::after,
-    &::before {
-      content: "";
+.menu-mobile-button__open {
+  cursor: pointer;
+  animation: rotateButtonOpen 0.3s ease forwards;
+  & :nth-child(1) {
+    animation: topAnimationOpen 0.3s ease forwards;
+  }
 
-      height: 2px;
-      background-color: $color-menu;
-    }
-    &::after,
-    &::before {
-      content: "";
-      width: 100%;
-      position: absolute;
-      transition: all 0.2s;
-    }
+  & :nth-child(2) {
+    animation: opacityMiddleShow 0.3s ease forwards;
+  }
+  & :nth-child(3) {
+    animation: bottomAnimationOpen 0.3s ease forwards;
+  }
+}
 
-    &::before {
-      top: -1rem;
-    }
-    &::after {
-      top: 1rem;
-    }
+// .button-desktop {
+//   position: relative;
+//   top: 0;
+//   & > div {
+//     background-color: red;
+//   }
+// }
+
+///MOBILE BUTTON ANIMATION
+
+@keyframes rotateButtonClose {
+  0% {
+    rotate: 0;
+  }
+  100% {
+    rotate: -90deg;
+  }
+}
+
+@keyframes rotateButtonOpen {
+  0% {
+    rotate: -90deg;
+  }
+
+  100% {
+    rotate: 0;
+  }
+}
+
+@keyframes opacityMiddleHide {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes opacityMiddleShow {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes topAnimationClose {
+  0% {
+    translate: 0;
+    rotate: 0deg;
+  }
+
+  50% {
+    rotate: 0deg;
+    translate: 0 12px;
+  }
+
+  100% {
+    rotate: -45deg;
+    translate: 0 12px;
+  }
+}
+
+@keyframes topAnimationOpen {
+  0% {
+    rotate: -45deg;
+    translate: 0 12px;
+  }
+
+  50% {
+    rotate: 0deg;
+    translate: 0 12px;
+  }
+
+  100% {
+    translate: 0;
+    rotate: 0deg;
+  }
+}
+@keyframes bottomAnimationClose {
+  0% {
+    translate: 0;
+    rotate: 0deg;
+  }
+
+  50% {
+    rotate: 0deg;
+    translate: 0 -12px;
+  }
+
+  100% {
+    rotate: 45deg;
+    translate: 0 -12px;
+  }
+}
+
+@keyframes bottomAnimationOpen {
+  0% {
+    rotate: 45deg;
+    translate: 0 -12px;
+  }
+
+  50% {
+    rotate: 0deg;
+    translate: 0 -12px;
+  }
+
+  100% {
+    translate: 0;
+    rotate: 0deg;
   }
 }

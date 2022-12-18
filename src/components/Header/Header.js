@@ -5,7 +5,6 @@ import Navigation from "../Navigation/Navigation";
 import { useInView } from "react-intersection-observer";
 
 const Header = () => {
-  // console.log("Header componenta");
   const options = {
     root: null,
     threshold: 0,
@@ -32,10 +31,9 @@ const Header = () => {
           </div>
           <div className="header_slogan"> ne ostavlja mjesta pitanju o kvalitetu!</div>
         </div>
-        <div className="header_part1"></div>
+        {/* <div className="header_part1"></div>
         <div className="header_part2"></div>
-        {/* <div className="header_part3"></div> */}
-        <div className="background-two"></div>
+        <div className="background-two"></div> */}
       </div>
     </Fragment>
   );

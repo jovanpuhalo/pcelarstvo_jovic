@@ -8,6 +8,8 @@ import GalleryItem from "./GalleryItem";
 import Modal from "../UI/Modal";
 import GallerySlider from "./GallerySlider";
 
+import { motion, useAnimationControls } from "framer-motion";
+
 const galleryData = [
   { url: "img/gallery/gal-1-1x.jpg" },
   { url: "img/gallery/gal-2-1x.jpg" },
@@ -25,7 +27,13 @@ const galleryData = [
   { url: "img/gallery/gal-14-1x.jpg" },
 ];
 
+const variants = {
+  hidden: {},
+  shown: {},
+};
+
 const Gallery = () => {
+  const animationGallery = useAnimationControls();
   const options = {
     root: null,
     threshold: 1,
@@ -43,25 +51,22 @@ const Gallery = () => {
   const [imgData, setImgData] = useState({});
 
   useEffect(() => {
-    console.log("document.body", window.scrollY);
     if (showModal) {
       document.body.style.overflow = "hidden";
-      // document.body.style.position = "fixed";
-      // document.body.style.bottom = `${window.scrollY}px`;
-      // document.body.style.left = "50px";
+    }
+    if (inViewGallery) {
+      animationGallery.start("shown");
+    } else {
+      animationGallery.start("hidden");
     }
     return () => {
       document.body.style.overflow = "auto";
-      // document.body.style.position = "unset";
-      // document.body.style.bottom = `unset`;
     };
-  }, [showModal]);
+  }, [showModal, inViewGallery]);
 
   const onClickHandler = (url, index) => {
-    console.log(url);
     setShowModal(true);
     setImgData({ imgUrl: url, imgIndex: index });
-    console.log("klinko");
   };
   const onCloseHendler = () => {
     setShowModal(false);
@@ -83,9 +88,16 @@ const Gallery = () => {
           <GiBeehive className="icon" />
         </div>
       </div>
-      <div className={`gallery  ${inViewGallery && "stickyy"}`} ref={galleryRef}>
+      <motion.div
+        className={`gallery `}
+        ref={galleryRef}
+        variants={variants}
+        initial="hidden"
+        animate={animationGallery}
+        transition={{ duration: 0.1, ease: "easeOut", staggerChildren: 0.1 }}
+      >
         {galleryItems}
-      </div>
+      </motion.div>
       {showModal && (
         <Modal onClose={onCloseHendler} class={"gallery-modal"}>
           <GallerySlider items={galleryData} itemData={imgData} onClose={onCloseHendler} />

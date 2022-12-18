@@ -26,7 +26,7 @@ const options = {
 const Location = () => {
   return (
     <div className="contact__location">
-      <LoadScript googleMapsApiKey="AIzaSyA45OgYPY6ORuNz1KItJ8Lt1xaVj_suTPs">
+      <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}>
         <GoogleMap
           id="map"
           zoom={14}

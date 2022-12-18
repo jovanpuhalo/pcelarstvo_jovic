@@ -3,11 +3,12 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import Layout from "./components/Layout/Layout";
 import HomePage from "./pages/HomePage.js";
 import ContactPage from "./pages/ContactPage.js";
-
+import { useDispatch } from "react-redux";
+import { uiActions } from "./store/ui-slice";
 function App() {
   const { pathname, hash, key } = useLocation();
-  console.log("App components");
-
+  const dispatch = useDispatch();
+  console.log("app pathname", pathname);
   useEffect(() => {
     // if not a hash link, scroll to top
     if (hash === "") {
@@ -24,6 +25,11 @@ function App() {
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });
       }
+    }
+    console.log("evo me ispred ifa");
+    if (pathname !== "/") {
+      console.log("usao");
+      dispatch(uiActions.setIntroAnimationIsFinish());
     }
   }, [pathname, hash, key]); // do this on route change
 

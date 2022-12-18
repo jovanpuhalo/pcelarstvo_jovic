@@ -1,23 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../../../sass/components/_navigation-mobile.scss";
-import Logo from "../../Logo/Logo";
 import NavigationItems from "../NavigationItems";
+import { motion, useAnimationControls } from "framer-motion";
 
-const NavigationMobile = ({ className, onClick }) => {
+const variants = {
+  shown: { x: 0, transition: { duration: 0.3, ease: "linear" } },
+  hidden: { x: 300, transition: { duration: 0.1, ease: "linear" } },
+};
+const NavigationMobile = ({ showNavMobile, onClick }) => {
+  const animateNav = useAnimationControls();
+
+  if (showNavMobile) {
+    animateNav.start("shown");
+  } else {
+    animateNav.start("hidden");
+  }
   return (
-    <div className={`navigation-mobile ${className}`}>
-      <div>
-        <div className="navigation-mobile__logo">
-          <Logo />
-        </div>
-        <div
-          className="navigation-mobile__close-button"
-          onClick={onClick}
-          // onTransitionEndCapture={() => setShow(true)}
-        ></div>
-      </div>
-      <NavigationItems className={"navigation-mobile__items"} onClick={onClick} />
-    </div>
+    <motion.div className={`navigation-mobile`} variants={variants} initial="shown" animate={animateNav}>
+      {showNavMobile && (
+        <NavigationItems className={"navigation-mobile__items"} onClick={onClick} showNavMobile={showNavMobile} />
+      )}
+    </motion.div>
   );
 };
 

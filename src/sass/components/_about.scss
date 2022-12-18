@@ -4,7 +4,11 @@
 .about {
   display: flex;
   flex-direction: column;
-  @include absCenter;
+  // @include absCenter;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 40%;
 
   @media only screen and (max-width: 75em) {

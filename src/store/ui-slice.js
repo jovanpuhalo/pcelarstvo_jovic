@@ -6,6 +6,7 @@ const uiSlice = createSlice({
     mouseNavOver: false,
     scrollY: 0,
     scrollYPrev: 0,
+    introAnimationIsFinish: false,
   },
   reducers: {
     mouseOver(state, action) {
@@ -14,6 +15,9 @@ const uiSlice = createSlice({
     setScrollY(state, action) {
       state.scrollYPrev = state.scrollY;
       state.scrollY = action.payload;
+    },
+    setIntroAnimationIsFinish(state) {
+      state.introAnimationIsFinish = true;
     },
   },
 });
